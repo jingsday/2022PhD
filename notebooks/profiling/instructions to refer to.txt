@@ -1,0 +1,33 @@
+User time (seconds): This is the amount of CPU time used by the process while executing user-level code (i.e., your program's code). In your example, the process used 263.34 seconds of user CPU time.
+
+System time (seconds): This is the amount of CPU time used by the process while executing kernel-level code, such as system calls and managing hardware resources. In your example, the process used 0.19 seconds of system CPU time.
+
+Percent of CPU this job got: This indicates the percentage of total CPU resources that the process utilized. In your example, the process utilized 99% of the available CPU resources during its execution.
+
+Elapsed (wall clock) time: This is the actual time that has passed from the start of the process until its completion. In your example, the process took 4 minutes and 23.95 seconds to complete.
+
+Memory statistics:
+
+Average shared text size (kbytes): The average amount of shared memory used by the process for executable code.
+Average unshared data size (kbytes): The average amount of unshared memory used by the process for data.
+Average stack size (kbytes): The average amount of memory used for the process's stack.
+Average total size (kbytes): The average total memory used by the process.
+Maximum resident set size (kbytes): The peak memory usage by the process in kilobytes.
+Average resident set size (kbytes): The average memory usage by the process.
+Page faults:
+
+Major (requiring I/O) page faults: The number of major page faults that required input/output operations.
+Minor (reclaiming a frame) page faults: The number of minor page faults where the page was already in memory but needed to be refreshed.
+Context switches:
+
+Voluntary context switches: The number of context switches that occurred because the process voluntarily gave up the CPU.
+Involuntary context switches: The number of context switches that occurred involuntarily, typically due to the process's time slice expiring.
+Swaps: The number of swaps that occurred between physical memory and disk storage. A value of 0 indicates that no swaps occurred.
+
+File system inputs and outputs: The number of file system input and output operations performed by the process.
+
+Socket messages sent and received: The number of socket messages sent and received by the process.
+
+Signals delivered: The number of signals delivered to the process.
+
+Exit status: The exit code returned by the process when it completed. An exit status of 0 typically indicates successful execution.
