@@ -1,4 +1,4 @@
-In documents(*.txt), you can find computational statistics regarding each step when appyling SCENIC workflow to a dataset containing 4021 cells. Notebooks used are uploaded as well.
+In documents(*.txt), you can find computational statistics regarding each step when appyling SCENIC workflow to a dataset containing 4021 cells. Notebooks used are uploaded as well. Please note approximately 40,000 cells constitues  the whole dataset used for research. 
 
 **In summary, SCENIC took 14 hours to process this dataset and the peak memory usage is 6.3GB.**
 
