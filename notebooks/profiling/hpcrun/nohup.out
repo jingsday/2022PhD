@@ -1,0 +1,248 @@
+Command being timed: "pyscenic ctx /home/jyang/projects/GBM/specimens/tumor_merged/SF2777/adj.csv --annotations_fname /home/jyang/projects/GBM/resource/motifs-v9-nr.hgnc-m0.001-o0.0.tbl --expression_mtx_fname /home/jyang/projects/GBM/specimens/tumor_merged/SF2777/SF2777SF2979tumorbatchcorrected.loom --output /home/jyang/projects/GBM/specimens/tumor_merged/SF2777/reg.csv --mask_dropouts --num_workers 8 /home/jyang/projects/GBM/resource/hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings.feather /home/jyang/projects/GBM/resource/hg19-tss-centered-10kb-10species.mc9nr.genes_vs_motifs.rankings.feather /home/jyang/projects/GBM/resource/hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings.feather"
+	User time (seconds): 3157.31
+	System time (seconds): 52.28
+	Percent of CPU this job got: 142%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 37:31.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5155156
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3
+	Minor (reclaiming a frame) page faults: 7311939
+	Voluntary context switches: 382227
+	Involuntary context switches: 27609
+	Swaps: 0
+	File system inputs: 48
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+/home/jyang/miniconda3/lib/python3.9/site-packages/loompy/bus_file.py:68: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+  def twobit_to_dna(twobit: int, size: int) -> str:
+/home/jyang/miniconda3/lib/python3.9/site-packages/loompy/bus_file.py:85: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+  def dna_to_twobit(dna: str) -> int:
+/home/jyang/miniconda3/lib/python3.9/site-packages/loompy/bus_file.py:102: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+  def twobit_1hamming(twobit: int, size: int) -> List[int]:
+
+2023-09-07 17:10:10,004 - pyscenic.cli.pyscenic - INFO - Creating modules.
+
+2023-09-07 17:10:11,736 - pyscenic.cli.pyscenic - INFO - Loading expression matrix.
+
+2023-09-07 17:10:21,654 - pyscenic.utils - INFO - Calculating Pearson correlations.
+
+2023-09-07 17:10:22,851 - pyscenic.utils - WARNING - Note on correlation calculation: the default behaviour for calculating the correlations has changed after pySCENIC verion 0.9.16. Previously, the default was to calculate the correlation between a TF and target gene using only cells with non-zero expression values (mask_dropouts=True). The current default is now to use all cells to match the behavior of the R verision of SCENIC. The original settings can be retained by setting 'rho_mask_dropouts=True' in the modules_from_adjacencies function, or '--mask_dropouts' from the CLI.
+	Dropout masking is currently set to [True].
+
+2023-09-07 17:12:03,018 - pyscenic.utils - INFO - Creating modules.
+
+2023-09-07 17:14:59,093 - pyscenic.cli.pyscenic - INFO - Loading databases.
+
+2023-09-07 17:14:59,780 - pyscenic.cli.pyscenic - INFO - Calculating regulons.
+
+2023-09-07 17:14:59,781 - pyscenic.prune - INFO - Using 8 workers.
+
+2023-09-07 17:14:59,781 - pyscenic.prune - INFO - Using 8 workers.
+
+2023-09-07 17:15:04,045 - pyscenic.prune - INFO - Worker hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(1): database loaded in memory.
+
+2023-09-07 17:15:04,045 - pyscenic.prune - INFO - Worker hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(1): database loaded in memory.
+Process hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(1):
+Traceback (most recent call last):
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/multiprocessing_on_dill/process.py", line 254, in _bootstrap
+    self.run()
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/prune.py", line 128, in run
+    motif_annotations = load_motif_annotations(
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/utils.py", line 57, in load_motif_annotations
+    df = pd.read_csv(fname, sep="\t", index_col=[1, 0], usecols=column_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1723, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 969, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['#motif_id', 'gene_name', 'motif_similarity_qvalue', 'orthologous_identity', 'description']
+
+2023-09-07 17:15:04,630 - pyscenic.prune - INFO - Worker hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(2): database loaded in memory.
+
+2023-09-07 17:15:04,630 - pyscenic.prune - INFO - Worker hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(2): database loaded in memory.
+Process hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(2):
+Traceback (most recent call last):
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/multiprocessing_on_dill/process.py", line 254, in _bootstrap
+    self.run()
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/prune.py", line 128, in run
+    motif_annotations = load_motif_annotations(
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/utils.py", line 57, in load_motif_annotations
+    df = pd.read_csv(fname, sep="\t", index_col=[1, 0], usecols=column_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1723, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 969, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['#motif_id', 'gene_name', 'motif_similarity_qvalue', 'orthologous_identity', 'description']
+
+2023-09-07 17:15:04,668 - pyscenic.prune - INFO - Worker hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(3): database loaded in memory.
+
+2023-09-07 17:15:04,668 - pyscenic.prune - INFO - Worker hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(3): database loaded in memory.
+Process hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(3):
+Traceback (most recent call last):
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/multiprocessing_on_dill/process.py", line 254, in _bootstrap
+    self.run()
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/prune.py", line 128, in run
+    motif_annotations = load_motif_annotations(
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/utils.py", line 57, in load_motif_annotations
+    df = pd.read_csv(fname, sep="\t", index_col=[1, 0], usecols=column_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1723, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 969, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['#motif_id', 'gene_name', 'motif_similarity_qvalue', 'orthologous_identity', 'description']
+
+2023-09-07 17:15:04,782 - pyscenic.prune - INFO - Worker hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(4): database loaded in memory.
+
+2023-09-07 17:15:04,782 - pyscenic.prune - INFO - Worker hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(4): database loaded in memory.
+Process hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings(4):
+Traceback (most recent call last):
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/multiprocessing_on_dill/process.py", line 254, in _bootstrap
+    self.run()
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/prune.py", line 128, in run
+    motif_annotations = load_motif_annotations(
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/utils.py", line 57, in load_motif_annotations
+    df = pd.read_csv(fname, sep="\t", index_col=[1, 0], usecols=column_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1723, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 969, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['#motif_id', 'gene_name', 'motif_similarity_qvalue', 'orthologous_identity', 'description']
+
+2023-09-07 17:15:08,502 - pyscenic.prune - INFO - Worker hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(1): database loaded in memory.
+
+2023-09-07 17:15:08,502 - pyscenic.prune - INFO - Worker hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(1): database loaded in memory.
+Process hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(1):
+
+2023-09-07 17:15:08,505 - pyscenic.prune - INFO - Worker hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(3): database loaded in memory.
+
+2023-09-07 17:15:08,505 - pyscenic.prune - INFO - Worker hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(3): database loaded in memory.
+
+2023-09-07 17:15:08,505 - pyscenic.prune - INFO - Worker hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(4): database loaded in memory.
+
+2023-09-07 17:15:08,505 - pyscenic.prune - INFO - Worker hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(4): database loaded in memory.
+Traceback (most recent call last):
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/multiprocessing_on_dill/process.py", line 254, in _bootstrap
+    self.run()
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/prune.py", line 128, in run
+    motif_annotations = load_motif_annotations(
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/utils.py", line 57, in load_motif_annotations
+    df = pd.read_csv(fname, sep="\t", index_col=[1, 0], usecols=column_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1723, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 969, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['#motif_id', 'gene_name', 'motif_similarity_qvalue', 'orthologous_identity', 'description']
+Process hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(3):
+Process hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(4):
+Traceback (most recent call last):
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/multiprocessing_on_dill/process.py", line 254, in _bootstrap
+    self.run()
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/prune.py", line 128, in run
+    motif_annotations = load_motif_annotations(
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/utils.py", line 57, in load_motif_annotations
+    df = pd.read_csv(fname, sep="\t", index_col=[1, 0], usecols=column_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1723, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 969, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['#motif_id', 'gene_name', 'motif_similarity_qvalue', 'orthologous_identity', 'description']
+Traceback (most recent call last):
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/multiprocessing_on_dill/process.py", line 254, in _bootstrap
+    self.run()
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/prune.py", line 128, in run
+    motif_annotations = load_motif_annotations(
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/utils.py", line 57, in load_motif_annotations
+    df = pd.read_csv(fname, sep="\t", index_col=[1, 0], usecols=column_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1723, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 969, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['#motif_id', 'gene_name', 'motif_similarity_qvalue', 'orthologous_identity', 'description']
+
+2023-09-07 17:15:08,519 - pyscenic.prune - INFO - Worker hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(2): database loaded in memory.
+
+2023-09-07 17:15:08,519 - pyscenic.prune - INFO - Worker hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(2): database loaded in memory.
+Process hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings(2):
+Traceback (most recent call last):
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/multiprocessing_on_dill/process.py", line 254, in _bootstrap
+    self.run()
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/prune.py", line 128, in run
+    motif_annotations = load_motif_annotations(
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pyscenic/utils.py", line 57, in load_motif_annotations
+    df = pd.read_csv(fname, sep="\t", index_col=[1, 0], usecols=column_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1723, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/jyang/miniconda3/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 969, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['#motif_id', 'gene_name', 'motif_similarity_qvalue', 'orthologous_identity', 'description']
