@@ -1,0 +1,32 @@
+/home/jyang/miniconda3/lib/python3.9/site-packages/loompy/bus_file.py:68: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+  def twobit_to_dna(twobit: int, size: int) -> str:
+/home/jyang/miniconda3/lib/python3.9/site-packages/loompy/bus_file.py:85: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+  def dna_to_twobit(dna: str) -> int:
+/home/jyang/miniconda3/lib/python3.9/site-packages/loompy/bus_file.py:102: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+  def twobit_1hamming(twobit: int, size: int) -> List[int]:
+usage: pyscenic [-h] {grn,add_cor,ctx,aucell} ...
+pyscenic: error: unrecognized arguments: /home/jyang/projects/GBM/resource/hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings.feather /home/jyang/projects/GBM/resource/hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings.feather
+Command exited with non-zero status 2
+	Command being timed: "pyscenic ctx /home/jyang/projects/GBM/specimens/individuals/SF2777/adj.csv /home/jyang/projects/GBM/resource/motifs-v9-nr.hgnc-m0.001-o0.0.tbl /home/jyang/projects/GBM/specimens/individuals/SF2777/SF2777tumor.loom -o reg.csv --mask_dropouts --num_workers 4 --annotations_fname /home/jyang/projects/GBM/resource/hg19-tss-centered-10kb-10species.mc9nr.genes_vs_motifs.rankings.feather /home/jyang/projects/GBM/resource/hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings.feather /home/jyang/projects/GBM/resource/hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings.feather"
+	User time (seconds): 6.64
+	System time (seconds): 0.44
+	Percent of CPU this job got: 59%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.96
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 313628
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1404
+	Minor (reclaiming a frame) page faults: 111998
+	Voluntary context switches: 3596
+	Involuntary context switches: 391
+	Swaps: 0
+	File system inputs: 263432
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 2
