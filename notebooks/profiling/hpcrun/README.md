@@ -1,5 +1,5 @@
-Two approaches attemped. Please also find pyscenic usage at the end of this document.
-1. Pyscenic command lines:
+**Two approaches attemped.** Please also find pyscenic usage at the end of this document.
+**1. Pyscenic command lines**:
 nohup pyscenic ctx /home/jyang/projects/GBM/specimens/individuals/SF2777/adj.csv --annotations_fname /home/jyang/projects/GBM/resource/motifs-v9-nr.hgnc-m0.001-o0.0.tbl
 --expression_mtx_fname /home/jyang/projects/GBM/specimens/individuals/SF2777/SF2777tumor.loom --output /home/jyang/projects/GBM/specimens/tumor_merged/SF2777/reg.csv --mask_dropouts
 --num_workers 4 /home/jyang/projects/GBM/resource/hg19-500bp-upstream-10species.mc9nr.genes_vs_motifs.rankings.feather
@@ -7,7 +7,7 @@ nohup pyscenic ctx /home/jyang/projects/GBM/specimens/individuals/SF2777/adj.csv
 /home/jyang/projects/GBM/resource/hg19-tss-centered-5kb-10species.mc9nr.genes_vs_motifs.rankings.feather
   
 
-3. Command generated using ipynb(please refer to the notebook scenic_step2.ipynb under hpcrun.
+**2. Command generated using ipynb**(please refer to the notebook scenic_step2.ipynb under hpcrun)
 
 
 
